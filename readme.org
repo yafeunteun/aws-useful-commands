@@ -1,0 +1,50 @@
+* All the AWS commands that I always forget
+
+
+** DynamoDB
+
+*** List DynamoDB Tables
+
+#+BEGIN_SRC sh
+aws dynamodb list-tables
+#+END_SRC
+
+
+*** Display all entries of a table
+
+#+BEGIN_SRC sh
+aws dynamodb scan --table-name TABLE_NAME
+#+END_SRC
+
+
+*** Display the schema of a table
+
+#+BEGIN_SRC sh
+aws dynamodb describe-table --table-name TABLE_NAME
+#+END_SRC
+
+
+*** Get an item by key
+
+#+BEGIN_SRC sh
+aws dynamodb get-item --table-name TABLE_NAME  --key '{ "KEY": { "S": "VALUE" } }'
+#+END_SRC
+
+
+*** Put an item
+
+#+BEGIN_SRC sh
+aws dynamodb put-item --table-name TABLE_NAME --item '{ "KEY": { "S": "USER-SUB-1234" }, "AN_ATTRIBUTE": {"S": "ATTRIBUTE_VALUE"} }'
+#+END_SRC
+
+** Cognito
+
+
+*** List identities of an identity pool
+
+#+BEGIN_SRC sh
+aws cognito-identity list-identities --identity-pool-id IDENTITY_POOL_ID --max-results 60
+#+END_SRC
+
+
+
